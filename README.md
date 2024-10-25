@@ -19,7 +19,8 @@
 ## What is it?
 Snow is an implementation of Miller-Rabin probabalistic primality testing, in which candidate numbers are determined to either be composite or probably prime. This is primarily of relevance for large numbers, where prime determination becomes significantly harder. While algorithmically possible to determine primality in polynomial time,
 the algorithms used to do so often hold significant overhead, limiting their applicability significantly. As such, probabalistic methods are typically employed. Snow is capable of enumerating probable primes for arbitrary bitlengths, with user-controllable variables for certainty, bitlength, the desired number of primes, and the number of threads
-that a user desires to utilize. This is especially useful for user generation of RSA moduli, or any other case in which a very large prime is needed. 
+that a user desires to utilize. This is especially useful for user generation of RSA moduli, or any other case in which a very large prime is needed. It additionally tests all generated probable primes against the RSA-1024 modulus by default, since I am mostly interested in generating my own RSA-1024 modulus and wanted to test my luck, although 
+this can easily be changed to fit end user preference.
 
 ## Usage
 Snow is primarily meant to serve more as a script than an application. It can be ran by simply invoking it with Python3's interpreter, and customized by altering constants within the script itself.
